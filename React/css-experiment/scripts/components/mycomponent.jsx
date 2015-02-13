@@ -23,7 +23,6 @@ var React = require('react'),
       },
 
       render: function() {
-        var results = 10000;
         return (
           <div class="flow">
             <div className='Mycomponent'
