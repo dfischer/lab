@@ -14,17 +14,28 @@ var React = require('react'),
         }
       },
 
-      _hover: function () {
+      _hoverEnter: function () {
         this.setState({isHovering: true});
       },
 
-      render: function() {
-        return (
-          <div className='Mycomponent' style={M(styles.default, this.state.isHovering && styles.hovering, this.props.style)} onMouseEnter={this._hover}>
+      _hoverLeave: function () {
+        this.setState({isHovering: false});
+      },
 
-            <div className="well">
-              Well thats really nice of you and all...
-              interesting
+      render: function() {
+        var results = 10000;
+        return (
+          <div class="flow">
+            <div className='Mycomponent'
+                 style={M(styles.default, this.state.isHovering && styles.hovering, this.props.style)}
+                 onMouseEnter={this._hoverEnter}
+                 onMouseLeave={this._hoverLeave} >
+              <div className="well">
+                <p>
+                  Well thats really nice of you and all...
+                  interesting
+                </p>
+              </div>
             </div>
           </div>
         )
